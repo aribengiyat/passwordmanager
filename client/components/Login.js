@@ -8,6 +8,7 @@ export default function Login() {
   const [attempt, setAttempt] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [register, setRegister] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -34,20 +35,24 @@ export default function Login() {
   };
   if (!login) {
     return (
-      <div>
-        <h2>Login:</h2>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <input type="text" placeholder="username" onChange={(e) => setUsername(e.target.value)}></input>
-          <input type="text" placeholder="password" onChange={(e) => setPassword(e.target.value)} ></input>
-          <button>Login</button>
-        </form>
-        <p style={{ visibility: attempt ? 'visible' : 'hidden' }}>Incorrect password</p>
-        <h2>Register:</h2>
-        <Register loginCheck={loginCheck}/>
-      </div>
+        <div class='container'>
+          <h2>Login:</h2>
+          <div>
+            <form onSubmit={(e) => handleSubmit(e)}>
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username" onChange={(e) => setUsername(e.target.value)}></input>
+              <input type="password" id="inputPassword5" class="form-control" onChange={(e) => setPassword(e.target.value)} ></input>
+              <div class='col text-center'><button class="btn btn-primary" >Login</button></div>
+            </form>
+          </div>
+          <p className='alert alert-danger' style={{ visibility: attempt ? 'visible' : 'hidden' }}>Incorrect password</p>
+          <h2>Register:</h2>
+          <Register loginCheck={loginCheck} />
+        </div>
     )
   }
   else return (
     <PassContainer/>
   )
 }
+
+

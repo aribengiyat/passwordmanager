@@ -17,4 +17,4 @@ cookieController.setSSIDCookieLogin = (req, res, next) => {
   return next();
 };
 
-module.exports = cookieController;
+module.exports = cookieController;3

@@ -1,0 +1,33 @@
+@import "~bootstrap/scss/bootstrap";
+
+.container{
+  margin-top: 2%;
+  width: 25%;
+}
+
+.container input{
+  margin-bottom: 5%;
+}
+
+.container button {
+  margin-bottom: 5%;
+}
+
+.passContainer{
+  margin: 2%;
+}
+.passContainer button {
+  margin-bottom: 2%;
+}
+
+.addPass input {
+  margin-right: 0.5%;
+}
+
+.addPass {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  gap: 10px;
+}
+

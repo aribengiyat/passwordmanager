@@ -43,7 +43,7 @@ app.get('/data', userController.isLoggedIn, passwordController.getPasswords, (re
 
 //unknown route handler
 app.use('*', (req, res) => {
-  res.status(400).json('Double check the url!')
+  res.status(404).json('Double check the url!')
 })
 
 app.use((err, req, res, next) => {

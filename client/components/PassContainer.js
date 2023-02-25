@@ -4,7 +4,7 @@ import PassDisplay from './PassDisplay';
 
 export default function PassContainer() {
   return (
-    <div>
+    <div class='container-fluid' className='passContainer'>
       <PassDisplay />
       <AddPass/>
     </div>

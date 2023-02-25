@@ -31,9 +31,9 @@ export default function Register(props) {
     return (
       <div>
         <form onSubmit={(e) => handleSubmit(e)}>
-          <input type="text" placeholder="username" onChange={(e) => setUsername(e.target.value)}></input>
-          <input type="text" placeholder="password" onChange={(e) => setPassword(e.target.value)} ></input>
-          <button>Login</button>
+          <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username" onChange={(e) => setUsername(e.target.value)}></input>
+          <input type="password" id="inputPassword5" class="form-control" onChange={(e) => setPassword(e.target.value)} ></input>
+          <div class='col text-center'><button class="btn btn-primary" >Register</button></div>
         </form>
       </div>
     )

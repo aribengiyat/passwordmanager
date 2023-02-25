@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 export default function PassDisplay() {
 
-  const [lists, setLists] = useState([])
+  const [lists, setLists] = useState([]);
 
   const list = [];
 
-  const fetchPass = () => {
+
+  const fetchPass = (e) => {
     fetch('http://localhost:3000/data', {
       credentials: 'include'
     })
@@ -14,16 +15,18 @@ export default function PassDisplay() {
       .then((data) => {
         console.log(data)
         for (const el of data) {
-          list.push(<p key={`${el.username}`}>Username: {`${el.username}`} password: {`${el.password}`} Website: {`${el.website}`}</p>)
+          list.push(<div><ul> <li> Website: {`${el.website}`}</li> <li key={`${el.username}`}> Username: {`${el.username}`}</li> <li>password: {`${el.password}`}</li></ul></div>)
         }
         setLists(list);
+        e.target.reset();
       })
   }
+
   
   return (
     <div>
-      <button onClick={() => fetchPass()}>Click for data</button>
-      {lists}
+      <button class="btn btn-primary" onClick={(e) => { fetchPass(e); }}>Click for data</button>
+        {lists}
     </div>
   )
 }
