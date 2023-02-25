@@ -4,6 +4,8 @@ const passwordController = require('./controllers/passwordControllers');
 const cookieController = require('./controllers/cookieController');
 const cookieParser = require("cookie-parser");
 const cors = require('cors');
+const path = require('path');
+const DIST_DIR = path.join(__dirname, '../client/build')
 
 
 const PORT = 3000;
@@ -16,6 +18,8 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(cookieParser());
+
+app.use(express.static(DIST_DIR));
 
 
 
